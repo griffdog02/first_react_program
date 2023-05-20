@@ -11,17 +11,11 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <LoginScreen />
-  );
-}
-
-function AppScreen({ navigation }) {
-  return (
-    <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.text}>hello</Text>
-      </TouchableOpacity>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Login">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Login" component={LoginScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }

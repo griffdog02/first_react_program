@@ -2,7 +2,7 @@ import styles from 'first_react_program/screens/LoginScreen/LoginScreen_style';
 import React, { useState } from 'react';
 import { View, TextInput, Button, Image, StyleSheet, TouchableOpacity, Text, TouchableWithoutFeedback, Keyboard } from 'react-native';
 
-const LoginScreen = () => {
+const LoginScreen = ({ navigation }) => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -29,6 +29,7 @@ const LoginScreen = () => {
                 />
                 <Button title="Sign In" onPress={() => {
                     // Implement your sign in function here
+                    navigation.navigate('Home');
                 }} />
                 <TouchableOpacity onPress={() => console.log('Navigate to Register')}>
                     <Text style={styles.registerText}>Create an account</Text>

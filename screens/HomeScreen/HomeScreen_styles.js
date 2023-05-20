@@ -6,11 +6,15 @@ const styles = {
         height: '100%'
     },
     text: {
-        color: 'black',
-        fontSize: 50,
+        color: 'white',
+        fontSize: 18,
         fontWeight: 'bold',
-        margin: 100,
+    },
+
+    iconContainer: {
+        width: 150,
+        height: 150,
     },
 };
 
-export default styles;
+export default HomeScreen_styles;

@@ -49,11 +49,11 @@ const CreateAccount = ({ navigation }) => {
 
                     // UNCOMMENTING THIS MAKES IT TO WHERE USER CAN'T NAV BACK
                     // TO CREATE ACCOUNT PAGE
-                    // navigation.reset({
-                    //     index: 0,
-                    //     routes: [{ name: 'Home' }],
-                    // });
-                    navigation.navigate('Home');
+                    navigation.reset({
+                        index: 0,
+                        routes: [{ name: 'Home' }],
+                    });
+                    // navigation.navigate('Home');
                 }} />
             </View>
         </TouchableWithoutFeedback>

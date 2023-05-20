@@ -7,7 +7,11 @@ import styles from 'first_react_program/screens/HomeScreen/HomeScreen_styles.js'
 const HomeScreen = ({ navigation }) => {
     return (
         <View style={styles.container}>
-            <Image style={styles.iconContainer} source={require('first_react_program/assets/montage_test.png')} />
+            <Text style={styles.intro}> Welcome To... </ Text>
+            <Image
+                style={styles.iconContainer}
+                source={require('first_react_program/assets/montage_outline.png')}
+                resizeMode='contain' />
         </View>
     );
 };

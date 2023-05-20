@@ -11,7 +11,8 @@ const LoginScreen = () => {
             <View style={styles.container}>
                 <Image
                     style={styles.logo}
-                    source={require('first_react_program/assets/montage_test.png')}
+                    source={require('first_react_program/assets/main_logo.png')}
+                    resizeMode='contain'
                 />
                 <TextInput
                     style={styles.input}

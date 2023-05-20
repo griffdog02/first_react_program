@@ -34,11 +34,11 @@ const LoginScreen = ({ navigation }) => {
 
                         // UNCOMMENTING THIS MAKES IT TO WHERE USER CAN NOT NAV
                         // BACK TO THE LOGIN SCREEN
-                        navigation.reset({
-                            index: 0,
-                            routes: [{ name: 'Home' }],
-                        });
-                        // navigation.navigate('Home');
+                        // navigation.reset({
+                        //     index: 0,
+                        //     routes: [{ name: 'Home' }],
+                        // });
+                        navigation.navigate('Home');
                     }} />
                     <TouchableOpacity onPress={() => navigation.navigate('CreateAccount')}>
                         <Text style={styles.registerText}>Create an account</Text>

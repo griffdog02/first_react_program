@@ -5,17 +5,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import HomeScreen from 'first_react_program/screens/HomeScreen/HomeScreen.js';
 import styles from './styles.js';
+import LoginScreen from './screens/LoginScreen/LoginScreen.js';
 
 const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="App">
-        <Stack.Screen name="App" component={AppScreen} />
-        <Stack.Screen name="Home" component={HomeScreen} />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <LoginScreen />
   );
 }
 

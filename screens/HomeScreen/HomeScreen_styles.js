@@ -17,4 +17,4 @@ const styles = {
     },
 };
 
-export default HomeScreen_styles;
+export default styles;

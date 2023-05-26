@@ -4,7 +4,6 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Icon from 'react-native-vector-icons/Ionicons';
 
 import HomeScreen from 'first_react_program/screens/HomeScreen/HomeScreen.js';
 import LoginScreen from './screens/LoginScreen/LoginScreen.js';
@@ -12,6 +11,9 @@ import CreateAccount from './screens/CreateAccount/CreateAccount.js';
 import MessagesScreen from './screens/MessagesScreen/MessagesScreen.js';
 import CreateMontage from './screens/CreateMontage/CreateMontage.js';
 
+import homeIcon from 'assets/home_icon.png';
+import messageIcon from 'assets/message_icon.png';
+import montageIcon from 'assets/montage_icon.png';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,17 +22,17 @@ function MyTabs() {
     <Tab.Navigator
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color, size }) => {
-          let iconName;
+          let icon;
 
           if (route.name === 'Home') {
-            iconName = focused ? 'home' : 'home-outline';
-          } else if (route.name === 'Settings') {
-            iconName = focused ? 'settings' : 'settings-outline';
-          } else if (route.name === 'Profile') {
-            iconName = focused ? 'person' : 'person-outline';
+            iconName = homeIcon;
+          } else if (route.name === 'Montage') {
+            iconName = montageIcon;
+          } else if (route.name === 'Messages') {
+            iconName = messageIcon;
           }
 
-          return <Icon name={iconName} size={size} color={color} />;
+          return <Image source={icon} style={{ width: size, height: size, tintColor: color }} />;
         },
       })}
       tabBarOptions={{

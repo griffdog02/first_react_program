@@ -1,12 +1,17 @@
 import styles from 'first_react_program/screens/CreateAccount/CreateAccount_style';
 import React, { useState } from 'react';
 import { View, TextInput, Button, StyleSheet, TouchableOpacity, Text, TouchableWithoutFeedback, Keyboard, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const CreateAccount = ({ navigation }) => {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+
+    const goBackToLogin = () => {
+        navigation.goBack();
+    };
 
     return (
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -55,6 +60,7 @@ const CreateAccount = ({ navigation }) => {
                     // });
                     navigation.navigate('TabHome');
                 }} />
+                <Button title="Go back to Login" onPress={goBackToLogin} />
             </View>
         </TouchableWithoutFeedback>
     );

@@ -50,15 +50,12 @@ const CreateAccount = ({ navigation }) => {
                 />
                 <Button title="Create Account" onPress={() => {
                     // Implement your create account function here
-                    console.log(`Username: ${username}, Email: ${email}, Password: ${password}, Confirm Password: ${confirmPassword}`);
-
-                    // UNCOMMENTING THIS MAKES IT TO WHERE USER CAN'T NAV BACK
-                    // TO CREATE ACCOUNT PAGE
-                    // navigation.reset({
-                    //     index: 0,
-                    //     routes: [{ name: 'Home' }],
-                    // });
-                    navigation.navigate('TabHome');
+                    if (password == confirmPassword) {
+                        console.log(`Username: ${username}, Email: ${email}, Password: ${password}, Confirm Password: ${confirmPassword}`);
+                        navigation.navigate('TabHome');
+                    } else {
+                        console.log('Mismatched passwords');
+                    }
                 }} />
                 <Button title="Go back to Login" onPress={goBackToLogin} />
             </View>

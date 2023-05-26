@@ -31,13 +31,6 @@ const LoginScreen = ({ navigation }) => {
                     <Button title="Sign In" onPress={() => {
                         // Implement sign in function here
                         console.log(`Username: ${username}, Password: ${password}`);
-
-                        // UNCOMMENTING THIS MAKES IT TO WHERE USER CAN NOT NAV
-                        // BACK TO THE LOGIN SCREEN
-                        // navigation.reset({
-                        //     index: 0,
-                        //     routes: [{ name: 'Home' }],
-                        // });
                         navigation.navigate('TabHome');
                     }} />
                     <TouchableOpacity onPress={() => navigation.navigate('CreateAccount')}>

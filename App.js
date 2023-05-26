@@ -1,3 +1,4 @@
+//imports
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
@@ -5,12 +6,14 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+//screens
 import HomeScreen from 'first_react_program/screens/HomeScreen/HomeScreen.js';
 import LoginScreen from './screens/LoginScreen/LoginScreen.js';
 import CreateAccount from './screens/CreateAccount/CreateAccount.js';
 import MessagesScreen from './screens/MessagesScreen/MessagesScreen.js';
 import CreateMontage from './screens/CreateMontage/CreateMontage.js';
 
+//icons
 import homeIcon from './assets/homeIcon.png';
 import messageIcon from './assets/messageIcon.png';
 import montageIcon from './assets/logoIcon.png';

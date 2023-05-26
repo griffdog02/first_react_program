@@ -38,7 +38,7 @@ const LoginScreen = ({ navigation }) => {
                         //     index: 0,
                         //     routes: [{ name: 'Home' }],
                         // });
-                        navigation.navigate('Home');
+                        navigation.navigate('TabHome');
                     }} />
                     <TouchableOpacity onPress={() => navigation.navigate('CreateAccount')}>
                         <Text style={styles.registerText}>Create an account</Text>

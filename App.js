@@ -11,9 +11,9 @@ import CreateAccount from './screens/CreateAccount/CreateAccount.js';
 import MessagesScreen from './screens/MessagesScreen/MessagesScreen.js';
 import CreateMontage from './screens/CreateMontage/CreateMontage.js';
 
-import homeIcon from 'assets/home_icon.png';
-import messageIcon from 'assets/message_icon.png';
-import montageIcon from 'assets/montage_icon.png';
+import homeIcon from './assets/homeIcon.png';
+import messageIcon from './assets/messageIcon.png';
+import montageIcon from './assets/logoIcon.png';
 
 const Tab = createBottomTabNavigator();
 
@@ -25,20 +25,24 @@ function MyTabs() {
           let icon;
 
           if (route.name === 'Home') {
-            iconName = homeIcon;
+            icon = homeIcon;
           } else if (route.name === 'Montage') {
-            iconName = montageIcon;
+            icon = montageIcon;
           } else if (route.name === 'Messages') {
-            iconName = messageIcon;
+            icon = messageIcon;
           }
 
-          return <Image source={icon} style={{ width: size, height: size, tintColor: color }} />;
+          return (
+            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <Image source={icon} style={{ width: size, height: size, tintColor: color }} resizeMode="center" />
+            </View>
+          );
         },
+
+        tabBarActiveTintColor: 'purple',
+        tabBarInactiveTintColor: 'gray',
+        tabBarStyle: { display: 'flex' },
       })}
-      tabBarOptions={{
-        activeTintColor: 'tomato',
-        inactiveTintColor: 'gray',
-      }}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
       <Tab.Screen name="Montage" component={CreateMontage} />
@@ -54,7 +58,7 @@ function MyStack() {
     <Stack.Navigator initialRouteName="Login">
       <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }} />
       <Stack.Screen name="CreateAccount" component={CreateAccount} options={{ headerShown: false }} />
-      <Stack.Screen name="Home" component={MyTabs} options={{ headerShown: false }} />
+      <Stack.Screen name="TabHome" component={MyTabs} options={{ headerShown: false }} />
     </Stack.Navigator>
   );
 }

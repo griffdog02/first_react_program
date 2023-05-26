@@ -53,7 +53,7 @@ const CreateAccount = ({ navigation }) => {
                     //     index: 0,
                     //     routes: [{ name: 'Home' }],
                     // });
-                    navigation.navigate('Home');
+                    navigation.navigate('TabHome');
                 }} />
             </View>
         </TouchableWithoutFeedback>

@@ -1,0 +1,44 @@
+type User @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  username: String!
+  email: String!
+  attendedEvents: [EventAttendance] @hasMany(indexName: "byUser", fields: ["id"])
+  posts: [Post] @hasMany(indexName: "byUser", fields: ["id"])
+  interactions: [Interaction] @hasMany(indexName: "byUser", fields: ["id"])
+}
+
+type Event @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  hostUser: User @hasOne
+  eventName: String!
+  eventDescription: String
+  eventDate: AWSDateTime!
+  eventS3Bucket: String!
+  Public: Boolean
+  attendees: [EventAttendance] @hasMany(indexName: "byEvent", fields: ["id"])
+  posts: [Post] @hasMany(indexName: "byEvent", fields: ["id"])
+}
+
+type Post @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  event: ID! @index(name: "byEvent")
+  user: ID! @index(name: "byUser")
+  videoURL: String!
+  videoS3Key: String!
+  postDate: AWSDateTime!
+  interactions: [Interaction] @hasMany(indexName: "byPost", fields: ["id"])
+}
+
+type Interaction @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  postID: ID! @index(name: "byPost")
+  interactionType: String!
+  interactionDate: AWSDateTime!
+}
+
+type EventAttendance @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  eventID: ID! @index(name: "byEvent")
+}
